@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 // CREATE 
 exports.post = function(req, res) {
     // Valida se todos os dados estão preenchidos, antes de enviar os dados para o DB
@@ -7,6 +9,14 @@ exports.post = function(req, res) {
         if (req.body[key] == "") 
             return res.send('Please, fill all filds!');
     }
+
+    fs.writeFile("data.json", JSON.stringify(req.body), function (err) {
+        
+        if (err) 
+            return res.send("Write file err");
+
+        return res.redirect("/instructors");
+    })
 
     return res.send(req.body);
 }
