@@ -14,7 +14,15 @@ routes.get("/instructors/create", function(req, res) {
 });
 
 routes.post("/instructors", function(req, res) {
-    return res.send("Recebido");
+    // Valida se todos os dados estão preenchidos, antes de enviar os dados para o DB
+    const keys = Object.keys(req.body);
+    
+    for(key of keys) {
+        if (req.body[key] == "") 
+            return res.send('Please, fill all filds!');
+    }
+
+    return res.send(req.body);
 });
 
 routes.get("/members", function(req, res) {
