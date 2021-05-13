@@ -1,0 +1,18 @@
+{
+  "instructors": [
+    {
+      "avatar_url": "http://google.com.br",
+      "name": "Lopes",
+      "birth": "2001-02-03",
+      "gender": "M",
+      "services": "Bodybuilding"
+    },
+    {
+      "avatar_url": "http://apple.com",
+      "name": "LP",
+      "birth": "1987-09-03",
+      "gender": "M",
+      "services": "Musculação, Crossfit"
+    }
+  ]
+}
