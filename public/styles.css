@@ -151,6 +151,7 @@ input {
 input[type="radio"] {
     width: initial;
     margin-right: 4px;
+    cursor: pointer;
 }
 
 input::placeholder {
@@ -166,4 +167,5 @@ button[type="submit"] {
     width: 100%;
     color: white;
     font-size: 16px;
+    cursor: pointer;
 }
