@@ -8,14 +8,29 @@ exports.post = function(req, res) {
     
     for(key of keys) {
         if (req.body[key] == "") 
-            return res.send('Please, fill all filds!');
+            return res.send('Erro: please, fill all filds!');
     }
 
-    req.body.birth = Date.parse(req.body.birth);
-    req.body.created_at = Date.now();
-    
-    data.instructors.push(req.body);
+    // Desestruturação do objeto
+    let { avatar_url, name, birth, gender, services } = req.body;
 
+    // Tratamento dos dados
+    birth = Date.parse(birth);
+    const created_at = Date.now();
+    const id = Number(data.instructors.length + 1);
+
+    // Envia os dados
+    data.instructors.push({
+        id,
+        name,
+        avatar_url,
+        birth,
+        gender,
+        services,
+        created_at
+    });
+
+    // Cria arquivo DATA JSON
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function (err) {
         if (err) 
             return res.send("Write file err");
