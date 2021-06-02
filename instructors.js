@@ -40,3 +40,16 @@ exports.post = function(req, res) {
 
     return res.send(req.body);
 }
+
+// SHOW
+exports.show = function(req, res) {
+    const { id } = req.params;
+
+    const foundInstructors = data.instructors.find(function(instructor) {
+        return instructor.id == id;
+    });
+
+    if (!foundInstructors) return res.send("Instructor not found! 🙁")
+
+    return res.send(foundInstructors);
+} 
