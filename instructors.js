@@ -1,6 +1,21 @@
 const fs = require("fs");
 const data = require("./data.json");
 
+
+// SHOW
+exports.show = function(req, res) {
+    const { id } = req.params;
+
+    const foundInstructors = data.instructors.find(function(instructor) {
+        return instructor.id == id;
+    });
+
+    if (!foundInstructors) return res.send("Instructor not found! 🙁")
+
+    return res.render("instructors/show", { instructor: foundInstructors });
+} 
+
+
 // CREATE 
 exports.post = function(req, res) {
     // Valida se todos os dados estão preenchidos, antes de enviar os dados para o DB
@@ -40,16 +55,3 @@ exports.post = function(req, res) {
 
     return res.send(req.body);
 }
-
-// SHOW
-exports.show = function(req, res) {
-    const { id } = req.params;
-
-    const foundInstructors = data.instructors.find(function(instructor) {
-        return instructor.id == id;
-    });
-
-    if (!foundInstructors) return res.send("Instructor not found! 🙁")
-
-    return res.send(foundInstructors);
-} 
