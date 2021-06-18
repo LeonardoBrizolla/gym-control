@@ -1,8 +1,8 @@
 const fs = require("fs");
 const data = require("./data.json");
 
-
 // SHOW
+
 exports.show = function(req, res) {
     const { id } = req.params;
 
@@ -16,7 +16,8 @@ exports.show = function(req, res) {
 } 
 
 
-// CREATE 
+// CREATE
+ 
 exports.post = function(req, res) {
     // Valida se todos os dados estão preenchidos, antes de enviar os dados para o DB
     const keys = Object.keys(req.body);

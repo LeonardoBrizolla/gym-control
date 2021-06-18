@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
-    --primary-color: #7159c1;
-    --secundary-color: #F7DF1E;
+    /* --primary-color: #7159c1; */
+    --primary-color: #6272a4;
+    --secundary-color: #f1fa8c;
+    /* --secundary-color: #F7DF1E; */
 }
 
 * {
@@ -12,12 +14,12 @@
 }
 
 body {
-    background-color: var(--primary-color);
+    background-color: #282a36;
     font-family: 'Roboto', sans-serif;
 }
 
 header {
-    background-color: white;
+    background-color: #44475a;
     width: 100%;
     padding: 32px;
     text-align: center;
@@ -40,18 +42,18 @@ header {
 
 .links a.active {
     font-weight: bold;
-    color: var(--primary-color);
+    color: #ff79c6;
 }
 
 .links a:hover {
-    color: var(--primary-color);
+    color: #ff79c6;
 }
 
 .links a::after {
     content: "";
     width: 0;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: #ff79c6;
     position: absolute;
     left: 0;
     bottom: -4px;
@@ -68,7 +70,7 @@ header {
     width: 800px;
     min-height: 400px;
     margin: 45px auto;
-    background-color: #fff;
+    background-color: #44475a;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -108,7 +110,7 @@ header {
 .details .item div:nth-child(1) {
     font-size: 14px;
     line-height: 24px;
-    color: #777;
+    color: #50fa7b;
     letter-spacing: 0.7;
     font-weight: normal;
 }
@@ -123,7 +125,7 @@ header {
 .details h3 {
     text-transform: uppercase;
     font-weight: bold;
-    color: var(--primary-color);
+    color: #50fa7b;
 }
 
 .details .item span {
@@ -143,9 +145,10 @@ header {
 input {
     width: 100%;
     outline: none;
-    color: #555;
+    color: #fff;
     font-weight: bold;
     font-size: 16px;
+    background-color: #44475a;
 }
 
 input[type="radio"] {
@@ -154,14 +157,20 @@ input[type="radio"] {
     cursor: pointer;
 }
 
+input[type="date"] {
+    opacity: 0.7;
+}
+
 input::placeholder {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: normal;
+    color: aliceblue;
+    opacity: 0.8;
 }
 
 button[type="submit"] {
     padding: 8px 32px;
-    background-color: var(--primary-color);
+    background-color: #ff79c6;
     border-radius: 4px;
     margin-top: 32px;
     width: 100%;
