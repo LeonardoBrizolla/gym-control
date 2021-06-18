@@ -17,8 +17,7 @@ exports.show = function(req, res) {
     const instructor = {
         ...foundInstructors,
         age: "",
-        gender: "",
-        services: "",
+        services: foundInstructors.services.split(","),
         created_at: "",
     }
 
