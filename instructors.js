@@ -12,6 +12,8 @@ exports.show = function(req, res) {
 
     if (!foundInstructors) return res.send("Instructor not found! 🙁");
 
+    // Spread Operator (...foundInstructors)
+
     const instructor = {
         ...foundInstructors,
         age: "",
