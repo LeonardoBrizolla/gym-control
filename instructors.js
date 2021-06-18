@@ -1,5 +1,6 @@
 const fs = require("fs");
 const data = require("./data.json");
+const { age } = require("./utils")
 
 // SHOW
 
@@ -16,7 +17,7 @@ exports.show = function(req, res) {
 
     const instructor = {
         ...foundInstructors,
-        age: "",
+        age: age(foundInstructors.birth),
         services: foundInstructors.services.split(","),
         created_at: "",
     }
