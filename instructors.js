@@ -10,14 +10,22 @@ exports.show = function(req, res) {
         return instructor.id == id;
     });
 
-    if (!foundInstructors) return res.send("Instructor not found! 🙁")
+    if (!foundInstructors) return res.send("Instructor not found! 🙁");
 
-    return res.render("instructors/show", { instructor: foundInstructors });
+    const instructor = {
+        ...foundInstructors,
+        age: "",
+        gender: "",
+        services: "",
+        created_at: "",
+    }
+
+    return res.render("instructors/show", { instructor });
 } 
 
 
 // CREATE
- 
+
 exports.post = function(req, res) {
     // Valida se todos os dados estão preenchidos, antes de enviar os dados para o DB
     const keys = Object.keys(req.body);
